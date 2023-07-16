@@ -34,7 +34,7 @@ export const Hero = () => {
       headers: {
         // FIXME: REPLACE WITH THE KEY 
         // "X-RapidAPI-Key": "",
-        // "X-RapidAPI-Host": "twitter154.p.rapidapi.com",
+        // "X-RapidAPI-Host": "",
       },
     };
 
