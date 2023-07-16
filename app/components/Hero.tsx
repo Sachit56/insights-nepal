@@ -32,8 +32,9 @@ export const Hero = () => {
         user_id: "71201743",
       },
       headers: {
-        "X-RapidAPI-Key": "58b96e9a28mshf38c9d3957de3c3p19e2b2jsn532cbdf1bae9",
-        "X-RapidAPI-Host": "twitter154.p.rapidapi.com",
+        // FIXME: REPLACE WITH THE KEY 
+        // "X-RapidAPI-Key": "",
+        // "X-RapidAPI-Host": "twitter154.p.rapidapi.com",
       },
     };
 
