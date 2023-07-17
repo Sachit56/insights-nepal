@@ -5,46 +5,8 @@ import Typewriter from "typewriter-effect";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-import axios from "axios";
-
 export const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
-  // username state for every change in username
-  const [username, setusername] = useState("");
-  // state variable for search value
-  const [searchValue, setSearchValue] = useState("");
-
-  // search value = username after click
-  useEffect(() => {
-    setSearchValue(username);
-  }, [username]);
-
-  const handleSearch = async () => {
-    console.log(searchValue);
-
-    const axios = require("axios");
-
-    const options = {
-      method: "GET",
-      url: "https://twitter154.p.rapidapi.com/user/details",
-      params: {
-        username: { searchValue },
-        user_id: "71201743",
-      },
-      headers: {
-        // FIXME: REPLACE WITH THE KEY 
-        // "X-RapidAPI-Key": "",
-        // "X-RapidAPI-Host": "",
-      },
-    };
-
-    try {
-      const response = await axios.request(options);
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   useEffect(() => {
     setIsMounted(true);
@@ -115,25 +77,13 @@ export const Hero = () => {
             </p>
 
             <div className="flex items-center">
-              {/* FIXME: removed button for new login idea */}
-              {/* <button className="hover:bg-[#cfc3fb]  hover:text-black text-black  px-3 py-1 border border-black rounded-none m-2 ">
-                <Link href={"/dashboard"}>Login With Twitter</Link>
-              </button> */}
-
-              {/* TODO: REPLACNIG WTH NEW TEXTBOX ICON  */}
-
               <input
                 type="text"
                 className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 border border-black sm:rounded-none focus:ring-primary-500 focus:border-primary-500"
                 placeholder="Twitter Username"
-                value={username}
-                onChange={(e) => setusername(e.target.value)}
               />
 
-              <button
-                className="py-3 px-5 w-full text-sm font-medium border cursor-pointer hover:bg-[#cfc3fb] hover:text-black text-black border-black rounded-none"
-                onClick={handleSearch}
-              >
+              <button className="py-3 px-5 w-full text-sm font-medium border cursor-pointer hover:bg-[#cfc3fb] hover:text-black text-black border-black rounded-none">
                 <Link href="#">Search</Link>
               </button>
             </div>
